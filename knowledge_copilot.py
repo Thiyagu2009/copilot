@@ -8,8 +8,8 @@ import os
 
 # Assume these are set via environment variables for security
 secret_key = st.secrets["SECRET_KEY"]
-environment_id = st.secrets('ENVIRONMENT_ID')
-organization_id = st.secrets('ORGANIZATION_ID')
+environment_id = st.secrets['ENVIRONMENT_ID']
+organization_id = st.secrets['ORGANIZATION_ID']
 conversation_id = st.secrets['CONVERSATION_ID']
 
 # Define the issuer and audience
