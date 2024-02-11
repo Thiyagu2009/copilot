@@ -48,7 +48,7 @@ def get_graphql_client():
 
 
 def chatbot():
-    st.title("Knowldge Chatbot")
+    st.title("Knowledge Chatbot")
 
     tab1, tab2 = st.tabs(["Chat", "Ingest"])
 
@@ -65,7 +65,7 @@ def chatbot():
         if scrap_url:
             client = get_graphql_client()
             response = ingest_url(client, scrap_url)
-            st.info("Ingested successfully & vector embeddings created ")
+            st.info(response)
 
 
 def generate_response(client, user_input):
@@ -101,7 +101,7 @@ def ingest_url(client, user_input):
     variables = {"ingestPageUri2": user_input}
 
     response = client.execute(query, variable_values=variables)
-    return response["ingestPage"]["id"]
+    return response["ingestPage"]
 
 if __name__ == "__main__":
     chatbot()
